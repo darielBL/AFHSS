@@ -168,7 +168,7 @@ section,
 
 .header .logo img {
   max-height: 32px;
-  margin-right: 8px;
+
 }
 
 .header .logo h1 {
@@ -365,10 +365,6 @@ section,
 
   }
 
-  .scrolled .sitename .navmenu a {
-    font-size: 1px;
-  }
-
   .scrolled .navmenu>ul>li {
     padding: 5px;
   }
@@ -386,7 +382,37 @@ section,
   .scrolled .sitename {
     display: none;
   }
-} 
+
+}
+
+@media (max-width: 440px) {
+  .scrolled .header .logo {
+    margin-left: -5px;
+  }
+
+  .navmenu a {
+    font-size: 10px !important;
+  }
+
+  .sitename {
+    font-size: smaller;
+  }
+
+  @media (max-width: 330px) {
+    .scrolled .logo {
+      display: none;
+    }
+
+    .navmenu a {
+      font-size: 6px !important;
+    }
+
+    .sitename {
+      font-size: 9px;
+    }
+
+  }
+}
 
 
 /*  .mobile-nav-toggle {
