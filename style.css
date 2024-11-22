@@ -7,9 +7,12 @@
 
 /*Colors*/
 :root {
-  background: #ADA996;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ADA996;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   /* Background color for the entire website, including individual sections */
   --default-color: #444444;
@@ -820,6 +823,23 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid var(--background-color);
+  border-bottom: 3px solid var(--background-color);
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
 
@@ -916,6 +936,42 @@ section,
   box-shadow: 15px 10px 15px #222222ce;
   transition: 1s;
 }
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 /*--------------------------------------------------------------
