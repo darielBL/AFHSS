@@ -48,8 +48,8 @@
 
 
   /**
-   * Preloader
-   */
+     * Preloader
+     */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -125,3 +125,20 @@
     navmenuScrollspy(); // Llama a la función al cargar la página
   })();
 })();
+
+// Crear el módulo de AngularJS
+var app = angular.module('Gallery', []);
+
+// Controlador para manejar la lógica
+app.controller('galleryCtrl', function ($scope, $http) {
+  $scope.cargarGaleria = function () {
+    $http.get('gallery.json').then(function (response) {
+      $scope.galeria = response.data;
+    }, function (error) {
+      console.error('Error al cargar:', error);
+      $scope.error = "No se pudo cargar la galería.";
+    });
+  };
+
+  $scope.cargarGaleria();
+});
