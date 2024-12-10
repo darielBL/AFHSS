@@ -54,6 +54,7 @@
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove();
+      document.querySelector('body').style.overflow = 'auto';
     });
   }
 
@@ -98,6 +99,15 @@
   member2.addEventListener('mouseleave', () => {
     member2.classList.remove('animation');
     pic2.classList.remove('animation2')
+  });
+  member3.addEventListener('mouseenter', () => {
+    member3.classList.add('animation');
+    pic3.classList.add('animation2')
+  });
+
+  member3.addEventListener('mouseleave', () => {
+    member3.classList.remove('animation');
+    pic3.classList.remove('animation2')
   });
 
 

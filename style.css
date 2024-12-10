@@ -70,6 +70,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow: hidden;
 }
 
 a {
@@ -111,13 +112,12 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 33px;
-  
+
 }
 
 @supports not selector(::-webkit-scrollbar) {
   body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
@@ -374,7 +374,7 @@ section,
 
 
 /* Mobile Navigation */
-@media (max-width: 1000px) {
+@media (max-width: 1275px) {
 
   .sitename {
     font-size: 16px;
@@ -419,7 +419,13 @@ section,
 
 }
 
-@media (max-width: 440px) {
+@media (max-width: 569px) {
+  .navmenu a {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 460px) {
   .scrolled .header .logo {
     margin-left: -5px;
   }
@@ -432,13 +438,13 @@ section,
     font-size: smaller;
   }
 
-  @media (max-width: 330px) {
+  @media (max-width: 400px) {
     .scrolled .logo {
-      display: none;
+      display: none !important;
     }
 
     .navmenu a {
-      font-size: 6px !important;
+      font-size: 8px !important;
     }
 
     .sitename {
@@ -842,6 +848,7 @@ section,
   margin-top: -40px;
 }
 
+
 @media (max-width: 768px) {
 
   .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
@@ -864,7 +871,21 @@ section,
 }
 
 .gallery .gallery-item:hover img {
+
   transform: scale(1.1);
+}
+
+.gallery-item {
+  position: relative;
+  /* Asegúrate de que el contenedor tenga esta propiedad */
+}
+
+.bi-box-arrow-up-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #d0d0d3;
+  font-size: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -926,22 +947,30 @@ section,
 
 .team .member .social {
   position: absolute;
-  right: 35px;
+  right: 0;
   bottom: 15px;
 
 }
 
 .team .member .social a {
   transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-
+  color: #040677;
 }
-
-
 
 .team .member .social i {
   font-size: 20px;
   margin: 0 10px;
+}
+
+@media (max-width: 380px) {
+  .team .member .social {
+    position: relative !important;
+    margin-top: 15px;
+    padding: 0 !important;
+    font-size: 10px !important;
+    
+
+  }
 }
 
 
@@ -972,8 +1001,8 @@ section,
   position: fixed;
   inset: 0;
   z-index: 999999;
-  overflow: hidden;
-  background: var(--background-color);
+
+  background: rgba(0, 0, 0, 0.6);
   transition: all 0.6s ease-out;
 }
 
